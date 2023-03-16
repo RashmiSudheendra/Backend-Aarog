@@ -8,7 +8,7 @@ app.use(express.json())
 const dbUrl = 'mongodb+srv://rashmi:aarogfsdp@aarogfsdp.xlgsyea.mongodb.net/test'
 // const dbUrl = "mongodb://127.0.0.1:27017/"
 const client = new MongoClient(dbUrl)
-const port = 3001
+const port = 4000
 
 // getting all users information
 app.get('/', async (req, res) => {
