@@ -50,8 +50,8 @@ app.put('/updateUser/:email', async (req, res) => {
     try{
         if (req.params.email) {
             const db = await client.db('user_management')
-            let user = await db.collection('All Accounts').findOne({ email: req.params.email })
-            if (user) {
+            let users = await db.collection('All Accounts').findOne({ email: req.params.email })
+            if (users) {
                 let user = await db.collection('All Accounts').updateOne({ email: req.params.email }, { $set: req.body })
                 res.status(200).send({ message: 'User info updated successfully' })
             }
